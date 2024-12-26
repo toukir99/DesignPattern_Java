@@ -30,35 +30,36 @@ The system needs to create these rides dynamically based on user preferences. Us
 
 ---
 
-# UML Diagram
-                +-------------------+
-                |       Ride        |  <<Interface>>
-                +-------------------+
-                | + bookRide()      |
-                +-------------------+
-                         ▲
-          +--------------+--------------+
-          |                             |
-+-------------------+         +-------------------+
-|   EconomyRide     |         |   PremiumRide     |
-+-------------------+         +-------------------+
-| + bookRide()      |         | + bookRide()      |
-+-------------------+         +-------------------+
-                         ▲
-                         |
-                +-------------------+
-                |   RideFactory     |  <<Abstract Class>>
-                +-------------------+
-                | + createRide()    |  <<Abstract Method>>
-                +-------------------+
-                         ▲
-          +--------------+--------------+--------------+
-          |                             |              |
-+-------------------+         +-------------------+    +-------------------+
-| EconomyRideFactory|         | PremiumRideFactory|    |   BikeRideFactory |
-+-------------------+         +-------------------+    +-------------------+
-| + createRide()    |         | + createRide()    |    | + createRide()    |
-+-------------------+         +-------------------+    +-------------------+
+## UML Diagram
+classDiagram
+    Ride <|-- EconomyRide
+    Ride <|-- PremiumRide
+    RideFactory <|-- EconomyRideFactory
+    RideFactory <|-- PremiumRideFactory
+    RideFactory <|-- BikeRideFactory
+    
+    class Ride {
+        +bookRide()
+    }
+    class EconomyRide {
+        +bookRide()
+    }
+    class PremiumRide {
+        +bookRide()
+    }
+    class RideFactory {
+        +createRide()
+    }
+    class EconomyRideFactory {
+        +createRide()
+    }
+    class PremiumRideFactory {
+        +createRide()
+    }
+    class BikeRideFactory {
+        +createRide()
+    }
+
 
 
 ## Implementation Steps
