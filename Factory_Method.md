@@ -60,8 +60,7 @@ classDiagram
     class BikeRideFactory {
         +createRide()
     }
-
-
+```mermaid`
 
 
 ## Implementation Steps
