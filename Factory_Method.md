@@ -22,13 +22,44 @@ The pattern involves:
 
 Imagine we are building a ride-sharing platform. The platform provides different types of rides:
 
-- **Economy:** e.g., standard cars like UberX.
-- **Premium:** e.g., luxury cars like Uber Black.
+- **Economy:** e.g., standard cars.
+- **Premium:** e.g., luxury cars.
 - **Bike:** e.g., two-wheelers.
 
 The system needs to create these rides dynamically based on user preferences. Using the Factory Method Pattern, we can decouple the ride creation process and make it extensible for future ride types.
 
 ---
+
+# UML Diagram
+                +-------------------+
+                |       Ride        |  <<Interface>>
+                +-------------------+
+                | + bookRide()      |
+                +-------------------+
+                         ▲
+          +--------------+--------------+
+          |                             |
++-------------------+         +-------------------+
+|   EconomyRide     |         |   PremiumRide     |
++-------------------+         +-------------------+
+| + bookRide()      |         | + bookRide()      |
++-------------------+         +-------------------+
+                         ▲
+                         |
+                +-------------------+
+                |   RideFactory     |  <<Abstract Class>>
+                +-------------------+
+                | + createRide()    |  <<Abstract Method>>
+                +-------------------+
+                         ▲
+          +--------------+--------------+--------------+
+          |                             |              |
++-------------------+         +-------------------+    +-------------------+
+| EconomyRideFactory|         | PremiumRideFactory|    |   BikeRideFactory |
++-------------------+         +-------------------+    +-------------------+
+| + createRide()    |         | + createRide()    |    | + createRide()    |
++-------------------+         +-------------------+    +-------------------+
+
 
 ## Implementation Steps
 
