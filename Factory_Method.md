@@ -31,36 +31,7 @@ The system needs to create these rides dynamically based on user preferences. Us
 ---
 
 ## UML Diagram
-```mermaid
-classDiagram
-    Ride <|-- EconomyRide
-    Ride <|-- PremiumRide
-    RideFactory <|-- EconomyRideFactory
-    RideFactory <|-- PremiumRideFactory
-    RideFactory <|-- BikeRideFactory
-    
-    class Ride {
-        +bookRide()
-    }
-    class EconomyRide {
-        +bookRide()
-    }
-    class PremiumRide {
-        +bookRide()
-    }
-    class RideFactory {
-        +createRide()
-    }
-    class EconomyRideFactory {
-        +createRide()
-    }
-    class PremiumRideFactory {
-        +createRide()
-    }
-    class BikeRideFactory {
-        +createRide()
-    }
-```mermaid`
+![Class Diagram](factoryMethodDiagram.png)
 
 
 ## Implementation Steps
