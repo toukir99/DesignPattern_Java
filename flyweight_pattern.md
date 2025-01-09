@@ -36,6 +36,9 @@ The Flyweight Pattern separates object data into:
 
 ---
 
+## UML Diagram
+![Class Diagram](flyweightPatternDiagram.png)
+
 ## **Example: Ride-Sharing Project**
 
 ### **Scenario**
