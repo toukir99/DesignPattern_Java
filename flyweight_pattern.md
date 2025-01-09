@@ -36,15 +36,14 @@ The Flyweight Pattern separates object data into:
 
 ---
 
-## UML Diagram
-![Class Diagram](flyweightPatternDiagram.png)
-
 ## **Example: Ride-Sharing Project**
 
 ### **Scenario**
 In a ride-sharing app, vehicles have attributes like `type`, `color`, and `capacity` (intrinsic). Each ride has unique details like `current location` and `destination` (extrinsic). The Flyweight Pattern optimizes the system by reusing vehicle objects with the same intrinsic properties.
 
 ---
+## UML Diagram
+![Class Diagram](flyweightPatternDiagram.png)
 
 ### **Step 1: Flyweight Interface**
 ```java
