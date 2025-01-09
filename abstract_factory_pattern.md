@@ -35,6 +35,9 @@ Let’s say we need to create vehicles for two different categories:
 - **Economy Vehicles**: Includes `Sedan` and `Hatchback`.
 - **Luxury Vehicles**: Includes `SUV` and `Limousine`.
 
+## UML Diagram
+![Class Diagram](abstractFactoryPatternDiagram.png)
+
 ### Step 1: Abstract Product
 ```java
 // Abstract product for vehicles
