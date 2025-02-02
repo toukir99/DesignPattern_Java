@@ -199,10 +199,13 @@ public class RideClient {
 
 ```
 
-## Expected Output
--Ride Requested: Ride{rideId='R123', passengerName='John Doe', driverName='null', pickupLocation='123 Main St', dropLocation='456 Elm St', fare=0.0, status='Requested'}
--Ride Accepted: Ride{rideId='R123', passengerName='John Doe', driverName='Jane Smith', pickupLocation='123 Main St', dropLocation='456 Elm St', fare=25.5, status='Accepted'}
--Ride Completed: Ride{rideId='R123', passengerName='John Doe', driverName='Jane Smith', pickupLocation='123 Main St', dropLocation='456 Elm St', fare=25.5, status='Completed'}
+# Expected Output
+
+```text
+Ride Requested: Ride{rideId='R123', passengerName='John Doe', driverName='null', pickupLocation='123 Main St', dropLocation='456 Elm St', fare=0.0, status='Requested'}
+Ride Accepted: Ride{rideId='R123', passengerName='John Doe', driverName='Jane Smith', pickupLocation='123 Main St', dropLocation='456 Elm St', fare=25.5, status='Accepted'}
+Ride Completed: Ride{rideId='R123', passengerName='John Doe', driverName='Jane Smith', pickupLocation='123 Main St', dropLocation='456 Elm St', fare=25.5, status='Completed'}
+```
 
 ## When to Use Builder Design Pattern?
 - When an object has **many optional parameters**.
