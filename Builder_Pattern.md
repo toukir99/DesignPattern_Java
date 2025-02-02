@@ -167,7 +167,42 @@ public class RideDirector {
 }
 ```
 
----
+### **4. Client Code (`RideClient`)**
+
+```java
+public class RideClient {
+    public static void main(String[] args) {
+        // Create the RideDirector instance to orchestrate the ride creation process
+        RideDirector rideDirector = new RideDirector();
+
+        // 1. Requesting a ride
+        String rideId = "R123";
+        String passengerName = "John Doe";
+        String pickupLocation = "123 Main St";
+        String dropLocation = "456 Elm St";
+        
+        Ride requestedRide = rideDirector.requestRide(rideId, passengerName, pickupLocation, dropLocation);
+        System.out.println("Ride Requested: " + requestedRide);
+
+        // 2. Accepting the ride by the driver
+        String driverName = "Jane Smith";
+        double fare = 25.50;
+        
+        Ride acceptedRide = rideDirector.acceptRide(requestedRide, driverName, fare);
+        System.out.println("Ride Accepted: " + acceptedRide);
+
+        // 3. Completing the ride
+        Ride completedRide = rideDirector.completeRide(acceptedRide);
+        System.out.println("Ride Completed: " + completedRide);
+    }
+}
+
+```
+
+## Expected Output
+-Ride Requested: Ride{rideId='R123', passengerName='John Doe', driverName='null', pickupLocation='123 Main St', dropLocation='456 Elm St', fare=0.0, status='Requested'}
+-Ride Accepted: Ride{rideId='R123', passengerName='John Doe', driverName='Jane Smith', pickupLocation='123 Main St', dropLocation='456 Elm St', fare=25.5, status='Accepted'}
+-Ride Completed: Ride{rideId='R123', passengerName='John Doe', driverName='Jane Smith', pickupLocation='123 Main St', dropLocation='456 Elm St', fare=25.5, status='Completed'}
 
 ## When to Use Builder Design Pattern?
 - When an object has **many optional parameters**.
