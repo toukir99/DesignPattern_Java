@@ -167,22 +167,20 @@ public class RideDirector {
 }
 ```
 
-### **4. Using the Director to Manage Ride Lifecycle**
-```java
-public class RideService {
-    public static void main(String[] args) {
-        RideDirector director = new RideDirector();
-        Ride requestedRide = director.requestRide("RIDE1234", "John Doe", "Downtown", "Airport");
-        System.out.println(requestedRide);
+---
 
-        Ride acceptedRide = director.acceptRide(requestedRide, "Alice Smith", 25.75);
-        System.out.println(acceptedRide);
+## When to Use Builder Design Pattern?
+- When an object has **many optional parameters**.
+- When object **immutability** is required.
+- When constructing objects with **different configurations**.
+- When we need **method chaining** to improve readability.
+- When **step-by-step creation** of an object is needed.
 
-        Ride completedRide = director.completeRide(acceptedRide);
-        System.out.println(completedRide);
-    }
-}
-```
+## When Not to Use Builder Design Pattern?
+- If an object has **few parameters**, a **simple constructor** is sufficient.
+- If the object does **not change frequently**, and **constructors work fine**.
+- If there is **no need for step-by-step creation**.
+- When using **factories** or **prototype patterns** might be a better fit for simpler objects.
 
 ---
 
